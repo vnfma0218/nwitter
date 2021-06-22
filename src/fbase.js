@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'firebase/auth';
 const firebaseConfig = {
   //github에 업로드 되는걸 방지하기 위해
   apiKey: process.env.REACT_APP_API_KEY,
@@ -9,4 +10,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_APP_ID,
 };
 
-export default firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
+
+export const authService = firebase.auth();
